@@ -30,7 +30,9 @@ class MessageHandler(BaseHTTPRequestHandler):
         data = self.rfile.read(length).decode()
 
         # 3. Extract the "message" field from the request data.
-        message = parse_qs(data)["message"][0]
+        messages = parse_qs(data)
+        for key, value in messages.iteritems():
+            message = key
 
         # Send the "message" field back as the response.
         self.send_response(200)
