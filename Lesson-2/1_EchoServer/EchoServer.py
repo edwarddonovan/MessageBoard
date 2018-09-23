@@ -30,7 +30,7 @@ class EchoHandler(BaseHTTPRequestHandler):
 
 
         # Now, write the response body using provided file path.
-        self.wfile.write(self.path.encode())
+        self.wfile.write(self.path[1:].encode())
 
 if __name__ == '__main__':
     server_address = ('', 8000)  # Serve on all addresses, port 8000.
