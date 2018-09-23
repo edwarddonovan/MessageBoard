@@ -31,7 +31,7 @@ class MessageHandler(BaseHTTPRequestHandler):
 
         # 3. Extract the "message" field from the request data.
         messages = parse_qs(data)
-        for key, value in messages.iteritems():
+        for key, value in messages.items():
             message = key
 
         # Send the "message" field back as the response.
